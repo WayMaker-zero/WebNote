@@ -27,7 +27,7 @@
 ## 如何使用
 
 ### 在线使用（免安装，推荐）
-- 访问：`https://ji-webnote.netlify.app/`
+- 访问：[https://ji-webnote.netlify.app/](https://ji-webnote.netlify.app/)
 - 浏览器建议：Chrome / Edge（Chromium 内核）
 - 首次进入后：
   - 点击“选择目录”，授权访问包含 Markdown 的本地目录
@@ -41,11 +41,11 @@
    - Python 自带：http.server
 
      ```
-     python -m http.server 8282
+     python -m http.server 8000
      ```
 
    - 也可使用 VS Code Live Server/Live Preview、Caddy、static-web-server 等
-2. 使用 Chrome/Edge 打开 `http://localhost:8282`
+2. 使用 Chrome/Edge 打开 `http://localhost:8000`
 3. 点击“选择目录”并按需编辑、保存、刷新或新建笔记
 4. 隐私说明：所有笔记操作均在本地浏览器完成，不会被上传或收集。
 
@@ -70,23 +70,4 @@
 - `src/fs.js`：文件系统能力封装（目录选择、扫描、读写、新建）
 - `src/ui.js`：侧边树渲染与交互
 - `src/markdown.js`：无依赖的轻量 Markdown 渲染器
-- `Docs/`：项目背景、可行性与运行方案等设计文档
 
-
-## 常见问题（FAQ）
-- 为什么必须用 Chrome/Edge？
-  - 因为写入本地文件依赖 File System Access API，当前在 Chromium 浏览器支持最好
-- 一定要用 8282 端口吗？
-  - 否。任意端口均可，关键是通过 `http://localhost` 或 HTTPS 提供页面
-- 能否部署到 GitHub Pages？
-  - 可以，但需 HTTPS 且浏览器仍会在首次使用时请求目录访问权限。详见 `Docs/本地运行通用方案研究.md`
-
-
-## 开发与贡献
-- 克隆仓库后，使用任意静态服务器在项目根目录启动服务
-- 代码无构建步骤，直接在浏览器中调试
-- 欢迎提出 Issue/PR，或在 `Docs/` 中补充设计与方案
-
-
-## 许可证
-- 未声明许可证。如需开源分发，请根据实际情况补充 LICENSE。
