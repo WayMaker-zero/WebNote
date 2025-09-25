@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebNote 本地 Markdown 浏览与编辑</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="left-controls">
+        <button id="btnPickDir">选择目录</button>
+        <button id="btnRefresh" disabled>刷新</button>
+        <button id="btnNewNote" disabled>新建笔记</button>
+      </div>
+      <div class="right-controls">
+        <button id="btnToggleView" disabled>切换为渲染视图</button>
+        <button id="btnSave" disabled>保存 (⌘/Ctrl+S)</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <aside class="sidebar">
+        <div class="sidebar-header">目录</div>
+        <div id="tree" class="tree"></div>
+      </aside>
+      <section class="content">
+        <div id="statusBar" class="status-bar">未选择目录</div>
+        <div id="editorPane" class="pane hidden">
+          <div class="editor-wrap">
+            <div id="lineNumbers" class="line-numbers">1</div>
+            <textarea id="editor" spellcheck="false"></textarea>
+          </div>
+        </div>
+        <div id="renderPane" class="pane">
+          <article id="rendered" class="markdown-body"></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span>本地运行 · 推荐使用 Chrome/Edge（支持 File System Access API）</span>
+    </footer>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+  </html>
